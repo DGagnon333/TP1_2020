@@ -28,6 +28,6 @@ public class Liste extends StyleMD {
     }
 
      public boolean equals(Object autreListe){
-        return disposition == ((StyleMD)autreListe).disposition && listeNumerotee == ((Liste)autreListe).listeNumerotee;
+        return disposition == ((StyleMD)autreListe).getDisposition() && listeNumerotee == ((Liste)autreListe).isListeNumerotee();
      }
 }
