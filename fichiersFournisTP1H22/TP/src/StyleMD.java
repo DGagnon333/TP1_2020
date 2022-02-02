@@ -6,7 +6,7 @@ public abstract class StyleMD {
     protected int disposition;
 
     public StyleMD(int disposition) {
-        if (disposition != BLOC || disposition != LIGNE)
+        if (disposition == BLOC || disposition == LIGNE)
             this.disposition = disposition;
         else
             this.disposition = BLOC;
@@ -20,17 +20,23 @@ public abstract class StyleMD {
     }
 
     public boolean equals(Object autreStyle) {
-        return disposition == ((StyleMD)autreStyle).disposition;
+        return disposition == ((StyleMD) autreStyle).disposition;
     }
 
-    protected String dispositionTexte(String texte){
-        texte = texte.trim();
-        if(texte.equals(null))
+    protected String preparationTexte(String texte) {
+        if (texte.equals(null))
             texte = texteNull;
-        else if(disposition == BLOC)
+        texte = texte.trim();
+
+        return texte;
+    }
+
+    protected String dispositionTexte(String texte) {
+        if (disposition == BLOC)
             texte = "\n" + texte + "\n";
-        else if(disposition == LIGNE)
+        else
             texte = texte + "\n";
+
         return texte;
     }
 }
