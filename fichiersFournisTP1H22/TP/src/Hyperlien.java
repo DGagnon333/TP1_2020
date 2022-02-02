@@ -1,24 +1,28 @@
-public class Hyperlien extends StyleMD{
+public class Hyperlien extends StyleMD {
     private String url;
+    public static final String URL_DEFAUT = "http://localhost";
 
-    public Hyperlien(String url, int disposition){
+    public Hyperlien(String url, int disposition) {
         super(disposition);
 
-        if(url.equals(null) || url.trim().length() == 0)
-            this.url = "http://localhost";
-
-        this.url = url;
+        if (url == null || url.trim().length() == 0)
+            this.url = URL_DEFAUT;
+        else
+            this.url = url;
     }
 
-    public String getUrl(){
+    public String getUrl() {
         return url;
     }
 
-    public String formater(String texte){
-        return "[" + texte + "] (" + url + ")" ;
+    public String formater(String texte) {
+        texte = super.preparationTexte(texte);
+        texte = "[" + texte + "](" + url + ")";
+        texte = super.dispositionTexte(texte);
+        return texte;
     }
 
-    public boolean equals(Object autreHyperlien){
-        return disposition == ((StyleMD)autreHyperlien).getDisposition() && url == ((Hyperlien)autreHyperlien).getUrl();
+    public boolean equals(Object autreHyperlien) {
+        return super.equals(autreHyperlien) && disposition == ((StyleMD) autreHyperlien).getDisposition() && url == ((Hyperlien) autreHyperlien).getUrl();
     }
 }

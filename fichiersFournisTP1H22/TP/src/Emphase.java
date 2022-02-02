@@ -4,9 +4,10 @@ public class Emphase extends StyleMD{
     }
 
     public String formater(String texte){
-        super.preparationTexte(texte);
-        texte = "** " + texte + " **";
-        super.dispositionTexte(texte);
+        final String ETOILES = "**";
+        texte = super.preparationTexte(texte);
+        texte = ETOILES + texte + ETOILES;
+        texte = super.dispositionTexte(texte);
 
         return texte;
     }
