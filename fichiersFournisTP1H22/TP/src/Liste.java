@@ -9,6 +9,7 @@ public class Liste extends StyleMD {
 
     @Override
     public String formater(String texte) {
+        super.preparationTexte(texte);
         if (listeNumerotee) {
             for (int i = 0; i < texte.length(); i++)
                 if (texte.charAt(i) == '\n')

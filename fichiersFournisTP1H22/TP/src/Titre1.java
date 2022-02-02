@@ -6,7 +6,7 @@ public class Titre1 extends StyleMD {
 
     @Override
     public String formater(String texte) {
-        texte = texte.trim();
+        super.preparationTexte(texte);
         for (int i = 0; i < texte.length(); i++)
             texte += "=";
         texte = super.dispositionTexte(texte);

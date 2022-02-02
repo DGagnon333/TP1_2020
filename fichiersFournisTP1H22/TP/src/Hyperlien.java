@@ -17,7 +17,7 @@ public class Hyperlien extends StyleMD{
     public String formater(String texte){
         return "[" + texte + "] (" + url + ")" ;
     }
-    
+
     public boolean equals(Object autreHyperlien){
         return disposition == ((StyleMD)autreHyperlien).getDisposition() && url == ((Hyperlien)autreHyperlien).getUrl();
     }

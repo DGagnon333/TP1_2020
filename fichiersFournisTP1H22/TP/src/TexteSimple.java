@@ -6,9 +6,11 @@ public class TexteSimple extends StyleMD {
     }
 
     public String formater(String texte) {
+        super.preparationTexte(texte);
         for (int i = 0; i < texte.length(); i++)
             if (texte.charAt(i) == '\n')
                 texte = texte.substring(0, i - AJUSTEMENT) + "<br/>" + texte.substring(i + AJUSTEMENT);
+        super.dispositionTexte(texte);
 
         return texte;
     }
