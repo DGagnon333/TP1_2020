@@ -21,13 +21,19 @@ public abstract class StyleMD {
 
     public boolean equals(Object autreStyle) {
         /*
-        boolean dispositionEgale = true;
         if(autreStyle.getClass() == StyleMD.class)
             dispositionEgale = disposition == (((StyleMD)autreStyle).disposition);
 
         return super.equals(autreStyle) && dispositionEgale;
          */
-        return super.equals(autreStyle) && disposition == (((StyleMD)autreStyle).disposition);
+        boolean dispositionEgale;
+        if(super.equals(autreStyle)){
+            if(StyleMD.class != autreStyle.getClass())
+                return true;
+            else if(disposition == (((StyleMD)autreStyle).disposition))
+                return true;
+        }
+        return false;
     }
 
     protected String preparationTexte(String texte) {
