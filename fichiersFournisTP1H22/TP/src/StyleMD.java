@@ -20,20 +20,10 @@ public abstract class StyleMD {
     }
 
     public boolean equals(Object autreStyle) {
-        /*
-        if(autreStyle.getClass() == StyleMD.class)
-            dispositionEgale = disposition == (((StyleMD)autreStyle).disposition);
-
-        return super.equals(autreStyle) && dispositionEgale;
-         */
-        boolean dispositionEgale;
-        if(super.equals(autreStyle)){
-            if(StyleMD.class != autreStyle.getClass())
-                return true;
-            else if(disposition == (((StyleMD)autreStyle).disposition))
-                return true;
-        }
-        return false;
+        if (autreStyle != null)
+            if (autreStyle.getClass() == this.getClass())
+                return ((StyleMD) autreStyle).disposition == disposition;
+        return super.equals(autreStyle);
     }
 
     protected String preparationTexte(String texte) {

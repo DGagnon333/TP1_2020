@@ -5,7 +5,7 @@ public class Titre3 extends StyleMD{
 
     @Override
     public String formater(String texte) {
-        super.preparationTexte(texte);
+        texte = super.preparationTexte(texte);
         texte = "### " + texte;
         texte = super.dispositionTexte(texte);
 
