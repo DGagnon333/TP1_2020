@@ -5,6 +5,7 @@ public class TexteSimple extends StyleMD {
         super(disposition);
     }
 
+    @Override
     public String formater(String texte) {
         final int LONGUEUR_TEXTE;
         texte = super.preparationTexte(texte);

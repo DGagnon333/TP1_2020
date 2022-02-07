@@ -43,8 +43,9 @@ public abstract class StyleMD {
      * Redéfénition de la méthode equals de la classe Object.
      * Est égal si la dispositino de l'autre style est la même
      * @param autreStyle l'autre style à comparer
-     * @return Vrai si la disposition est la même
+     * @return Vrai si la disposition est la même, faux sinon
      */
+    @Override
     public boolean equals(Object autreStyle) {
         if (autreStyle != null)
             if (autreStyle.getClass() == this.getClass())
@@ -53,8 +54,8 @@ public abstract class StyleMD {
     }
 
     /**
-     * Arrang le texte pour être plus propre. S'il est null,
-     * retourne un String "null".
+     * Méthode protégée qui Arrange le texte pour être plus propre. S'il
+     * est null, retourne un String "null".
      * @param texte Le texte à préparer
      * @return le texte préparé
      */
@@ -67,8 +68,8 @@ public abstract class StyleMD {
     }
 
     /**
-     * Dispose le texte dépendant d'une dispositino pour un bloc
-     * ou une ligne.
+     * Méthode protégée qui dispose le texte dépendant d'une disposition
+     * pour un bloc ou une ligne.
      * @param texte Le texte à arranger
      * @return le texte arrangé
      */

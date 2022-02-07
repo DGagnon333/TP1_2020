@@ -7,12 +7,14 @@ public class Liste extends StyleMD {
         this.listeNumerotee = listeNumerotee;
     }
 
+
     @Override
     public String formater(String texte) {
         final int LONGUEUR_TEXTE;
         final String POINT = ". ";
         final String ETOILE = "* ";
         int compteur = 1;
+
         texte = super.preparationTexte(texte);
         LONGUEUR_TEXTE = texte.length();
 
