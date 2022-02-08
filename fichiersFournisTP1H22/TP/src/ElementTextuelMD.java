@@ -1,8 +1,8 @@
-public class ElementTextureIMD {
+public class ElementTextuelMD {
     private  String texte;
     private  StyleMD style;
 
-    public ElementTextureIMD(String texte, StyleMD style) throws StyleMDInvalideException {
+    public ElementTextuelMD(String texte, StyleMD style) throws StyleMDInvalideException {
         if(texte.equals(null) || texte.trim().isEmpty())
             if(style.equals(null))
                 throw new StyleMDInvalideException();
