@@ -4,7 +4,7 @@ public class DocumentMD {
     private ArrayList<ElementTextuelMD> elements;
 
     public DocumentMD(){
-        elements = new ArrayList<>();
+        elements = new ArrayList<ElementTextuelMD>();
     }
 
     /**
@@ -39,8 +39,8 @@ public class DocumentMD {
     public ElementTextuelMD remplacerElementTextuel(int position, ElementTextuelMD eltTexteMD) throws ElementTextuelMDInvalideException, IndexOutOfBoundsException{
         if(eltTexteMD == null)
             throw new ElementTextuelMDInvalideException();
-        //if(eltTexteMD != null && positionValide(position))
-          //  throw new IndexOutOfBoundsException();
+        if(eltTexteMD != null && !positionValide(position))
+            throw new IndexOutOfBoundsException();
 
         ajouterElementTextuel(position, eltTexteMD);
 
@@ -49,8 +49,8 @@ public class DocumentMD {
 
     public ElementTextuelMD obtenirElementTextuel(int position) throws IndexOutOfBoundsException{
         ElementTextuelMD elementEnlever;
-        //if(!positionValide(position))
-          //  throw new IndexOutOfBoundsException();
+        if(!positionValide(position))
+            throw new IndexOutOfBoundsException();
 
         elementEnlever = supprimerElementTextuel(position);
         elements.add(position, elementEnlever);
@@ -59,8 +59,8 @@ public class DocumentMD {
     }
 
     public void modifierStyle(int position, StyleMD style) throws IndexOutOfBoundsException,StyleMDInvalideException{
-        //if(!positionValide(position))
-          //  throw new IndexOutOfBoundsException();
+        if(!positionValide(position))
+            throw new IndexOutOfBoundsException();
         if(positionValide(position) && style == null)
             throw new StyleMDInvalideException();
 
@@ -68,8 +68,8 @@ public class DocumentMD {
     }
 
     public void modifierTexte(int position, String texte) throws IndexOutOfBoundsException, ElementTextuelMDInvalideException, StyleMDInvalideException{
-        //if(!positionValide(position))
-          //  throw new IndexOutOfBoundsException();
+        if(!positionValide(position))
+            throw new IndexOutOfBoundsException();
         if(positionValide(position) && (texte.equals(null) || texte.trim().isEmpty()))
             throw new ElementTextuelMDInvalideException();
 
@@ -83,8 +83,8 @@ public class DocumentMD {
     }
 
     public String obtenirMarkdown(int position) throws IndexOutOfBoundsException{
-        //if(!positionValide(position))
-          //  throw new IndexOutOfBoundsException();
+        if(!positionValide(position))
+            throw new IndexOutOfBoundsException();
 
         return obtenirElementTextuel(position).getTexte();
     }
@@ -93,7 +93,7 @@ public class DocumentMD {
         String texteRetourne = "";
 
         for(ElementTextuelMD texte : elements)
-            texteRetourne += texte.getTexte();
+            texteRetourne += texte.toString();
 
         return texteRetourne;
     }
