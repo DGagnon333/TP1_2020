@@ -3,6 +3,13 @@
  * s'assurant que les méthodes qui l'implémentent aient une
  * méthode formater. Peut aussi s'occuper de la préparation de
  * texte et de sa disposition.
+ *
+ * @author Dérick Gagnon
+ * Code permanent: GAGD84110109
+ * Courriel: ggg991987@ens.uqam.ca
+ * Cours: INF2050
+ * gr: 20
+ * @version 9 Février 2022
  */
 public abstract class StyleMD {
     //Constantes

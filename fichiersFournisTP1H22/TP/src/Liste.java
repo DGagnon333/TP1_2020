@@ -1,3 +1,14 @@
+/**
+ * Classe qui hérite de la classe StyleMD et s'occupe de formater un texte pour
+ * faire des listes numérotées et non numérotées
+ *
+ * @author Dérick Gagnon
+ * Code permanent: GAGD84110109
+ * Courriel: ggg991987@ens.uqam.ca
+ * Cours: INF2050
+ * gr: 20
+ * @version 5 Février 2022
+ */
 public class Liste extends StyleMD {
     private boolean listeNumerotee;
     private final int AJUSTEMENT = 1;

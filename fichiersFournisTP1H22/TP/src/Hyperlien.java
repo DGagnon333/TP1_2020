@@ -1,3 +1,13 @@
+/**
+ * Classe qui hérite de la classe StyleMD et de formatter les des liens url
+ *
+ * @author Dérick Gagnon
+ * Code permanent: GAGD84110109
+ * Courriel: ggg991987@ens.uqam.ca
+ * Cours: INF2050
+ * gr: 20
+ * @version 5 Février 2022
+ */
 public class Hyperlien extends StyleMD {
     private String url;
     public static final String URL_DEFAUT = "http://localhost";
