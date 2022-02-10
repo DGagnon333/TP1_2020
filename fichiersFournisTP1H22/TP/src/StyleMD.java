@@ -34,8 +34,7 @@ public abstract class StyleMD {
     }
 
     /**
-     * Méthode abstraite qui retournera éventuellement le
-     * texte formaté
+     * Méthode abstraite qui retourne le texte formaté
      * @param texte le texte à formater
      * @return le texte formaté
      */
@@ -46,9 +45,10 @@ public abstract class StyleMD {
         return disposition;
     }
 
+
     /**
      * Redéfénition de la méthode equals de la classe Object.
-     * Est égal si la dispositino de l'autre style est la même
+     * Est égal si la dispositino de l'autre style est le même
      * @param autreStyle l'autre style à comparer
      * @return Vrai si la disposition est la même, faux sinon
      */

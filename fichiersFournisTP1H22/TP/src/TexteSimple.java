@@ -1,8 +1,5 @@
 /**
- * Classe abstraite gardant la disposition d'un texte et
- * s'assurant que les méthodes qui l'implémentent aient une
- * méthode formater. Peut aussi s'occuper de la préparation de
- * texte et de sa disposition.
+ * Classe qui formate un texte en Markdown.
  *
  * @author Dérick Gagnon
  * Code permanent: GAGD84110109
@@ -18,6 +15,12 @@ public class TexteSimple extends StyleMD {
         super(disposition);
     }
 
+    /**
+     * Redéfénition de la méthode formater dans la classe StyleMD. Formate un texte simple
+     *
+     * @param texte le texte à formater
+     * @return le texte formaté
+     */
     @Override
     public String formater(String texte) {
         final int LONGUEUR_TEXTE;
